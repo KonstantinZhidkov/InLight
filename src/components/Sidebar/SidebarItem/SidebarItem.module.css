@@ -1,0 +1,18 @@
+.sidebarItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebarItem__link {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    color: rgba(27, 29, 44, 1);
+}
+
+.sidebarItem__image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

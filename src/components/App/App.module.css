@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.appWrapper {
+    width: 100%;
+    min-height: 200vh;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.main {
+    max-width: calc(100% - 200px);
+    position: relative;
+    left: 200px;
+    top: 80px;
+}
