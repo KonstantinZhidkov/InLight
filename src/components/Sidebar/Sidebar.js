@@ -17,16 +17,16 @@ export default class Sidebar extends React.Component {
                         <SidebarItem title='Profile' href='/profile' source={sidebarAvatar} />
                     </li>
                     <li className={styles.nav__item}>
-                        <SidebarItem title='News' source={sidebarNews} />
+                        <SidebarItem title='News' href='/news' source={sidebarNews} />
                     </li>
                     <li className={styles.nav__item}>
                         <SidebarItem title='Dialogs' href='/dialogs' source={sidebarDialogs} />
                     </li>
                     <li className={styles.nav__item}>
-                        <SidebarItem title='Music' source={sidebarMusic} />
+                        <SidebarItem title='Music' href='/music' source={sidebarMusic} />
                     </li>
                     <li className={styles.nav__item}>
-                        <SidebarItem title='Settings' source={sidebarSettings} />
+                        <SidebarItem title='Settings' href='/settings' source={sidebarSettings} />
                     </li>
                 </ul>
             </nav>

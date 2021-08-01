@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './SidebarItem.module.css';
 
 export default class SidebarItem extends React.Component {
@@ -8,8 +9,8 @@ export default class SidebarItem extends React.Component {
 
         return (
             <div className={styles.sidebarItem} >
-                <a className={styles.sidebarItem__link} href={href}>{title}</a>
-                <a href={href}><img className={styles.sidebarItem__image} src={source} /></a>
+                <NavLink className={styles.sidebarItem__link} activeClassName={styles.active} to={href}>{title}</NavLink>
+                <NavLink to={href}><img className={styles.sidebarItem__image} src={source} alt='icon' /></NavLink>
             </div>
         )
     }
