@@ -1,0 +1,12 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs__list {
+
+}
+
+.dialogs__messages {
+    font-size: 1.5em;
+}

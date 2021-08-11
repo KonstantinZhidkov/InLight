@@ -11,7 +11,7 @@ import Music from '../Music/Music';
 import Dialogs from '../Dialogs/Dialogs';
 import Settings from '../Settings/Settings';
 
-const App = () => {
+const App = ({data}) => {
     return (
         <BrowserRouter>
             <div className={styles.appWrapper}>
@@ -21,7 +21,7 @@ const App = () => {
                     <Route path='/profile' component={Profile}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
-                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/dialogs' render={ () => <Dialogs data={data} />}/>
                     <Route path='/settings' component={Settings}/>
                 </main>
             </div>
