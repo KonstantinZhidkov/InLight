@@ -18,11 +18,11 @@ const App = ({data}) => {
                 <Header />
                 <Sidebar />
                 <main className={styles.main}>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
+                    <Route path='/profile' render={ () => <Profile />}/>
+                    <Route path='/news' render={ () => <News />}/>
+                    <Route path='/music' render={ () => <Music />}/>
                     <Route path='/dialogs' render={ () => <Dialogs data={data} />}/>
-                    <Route path='/settings' component={Settings}/>
+                    <Route path='/settings' render={ () => <Settings />}/>
                 </main>
             </div>
         </BrowserRouter>
