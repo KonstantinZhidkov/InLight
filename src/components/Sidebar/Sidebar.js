@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Sidebar.module.css';
 
 /* Importing icons for sidebar */
-import { sidebarAvatar, sidebarNews, sidebarDialogs, sidebarMusic, sidebarSettings} from '../../images/images';
+import { sidebarAvatar, sidebarNews, sidebarDialogs, sidebarMusic, sidebarSettings } from '../../images/images';
 
 import SidebarItem from "./SidebarItem/SidebarItem";
 

@@ -1,0 +1,57 @@
+.postsBlock__post  {
+    width: 100%;
+    margin-top: 100px;
+    position: relative;
+}
+
+.postsBlock__postHeaderWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.postsBlock__avatar {
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+    display: block;
+    border-radius: 50%;
+}
+
+.postsBlock__postHeader {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.postsBlock__postImageWrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.postsBlock__postImage {
+    min-width: 80%;
+    height: auto;
+    display: inline-block;
+}
+
+.postsBlock__likes {
+    position: absolute;
+    bottom: -60px;
+    right: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.postsBlock__likesImg {
+    width: 50px;
+    height: auto;
+    margin-right: 7px;
+    display: block;
+    cursor: pointer;
+}
+
+.postsBlock__likesNumber {
+    font-size: 25px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+}

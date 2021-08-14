@@ -7,7 +7,7 @@ export default class Dialogs extends React.Component {
 
     render() {
 
-        const { dialogsData } = this.props.data.dialogsPage;
+        const { dialogsData } = this.props.data;
 
         const dialogsDataHandler = dialogsData.map(item => <Dialog key={item.id} id={item.id} title={item.title}/>);
 

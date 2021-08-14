@@ -11,17 +11,17 @@ import Music from '../Music/Music';
 import Dialogs from '../Dialogs/Dialogs';
 import Settings from '../Settings/Settings';
 
-const App = ({data}) => {
+const App = ({ data, addPost }) => {
     return (
         <BrowserRouter>
             <div className={styles.appWrapper}>
                 <Header />
                 <Sidebar />
                 <main className={styles.main}>
-                    <Route path='/profile' render={ () => <Profile />}/>
+                    <Route path='/profile' render={ () => <Profile data={ data.profilePage } addPost={ addPost }/>}/>
                     <Route path='/news' render={ () => <News />}/>
                     <Route path='/music' render={ () => <Music />}/>
-                    <Route path='/dialogs' render={ () => <Dialogs data={data} />}/>
+                    <Route path='/dialogs' render={ () => <Dialogs data={ data.dialogsPage } />}/>
                     <Route path='/settings' render={ () => <Settings />}/>
                 </main>
             </div>

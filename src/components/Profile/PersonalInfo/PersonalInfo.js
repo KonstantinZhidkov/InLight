@@ -1,16 +1,14 @@
 import React from 'react';
 import styles from './PersonalInfo.module.css';
 
-import { avatar, profileBackground } from "../../../images/images";
-
 const PersonalInfo = (props) => {
 
-    const { name, city, date_of_birth, mail } = props;
+    const { background, avatar, name, city, date_of_birth, mail } = props;
 
     return(
         <div className={ styles.personalInfo }>
             <div className={ styles.personalInfo__background }>
-                <img className={ styles.personalInfo__backgroundImage } src={ profileBackground } alt="background image"/>
+                <img className={ styles.personalInfo__backgroundImage } src={ background } alt="background image"/>
             </div>
             <div className={ styles.personalInfo__info }>
                 <div className={ styles.personalInfo__avatarBox }>
