@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
 import './css/normalize.css';
 
-import state from './state/state';
-import { addPost } from "./state/state";
+import store from './redux/reduxStore';
+import App from './components/App/App';
 
-ReactDOM.render(<App data={state} addPost={addPost} />, document.getElementById('root'));
+let rerenderApp = (state) => {
+    ReactDOM.render(<App data={state} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
+}
+
+rerenderApp(store.getState());
+
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderApp(state);
+});
