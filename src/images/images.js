@@ -4,5 +4,6 @@ import sidebarDialogs from './icons/sidebarDialogs.svg';
 import sidebarMusic from './icons/sidebarMusic.svg';
 import sidebarSettings from './icons/sidebarSettings.svg';
 import postLike from './icons/postLike.svg';
+import preloader from './content/preloader.svg';
 
-export { sidebarAvatar, sidebarNews, sidebarDialogs, sidebarMusic, sidebarSettings, postLike };
+export { sidebarAvatar, sidebarNews, sidebarDialogs, sidebarMusic, sidebarSettings, postLike, preloader };

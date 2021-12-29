@@ -23,6 +23,9 @@ export default class Sidebar extends React.Component {
                         <SidebarItem title='Dialogs' href='/dialogs' source={sidebarDialogs} />
                     </li>
                     <li className={styles.nav__item}>
+                        <SidebarItem title='Users' href='/users' source={sidebarDialogs} />
+                    </li>
+                    <li className={styles.nav__item}>
                         <SidebarItem title='Music' href='/music' source={sidebarMusic} />
                     </li>
                     <li className={styles.nav__item}>

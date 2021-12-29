@@ -2,23 +2,22 @@ import React from 'react';
 import styles from './PostsBlock.module.css';
 
 import Post from './Post/Post';
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 
-const PostsBlock = ({ postsData, newPostText, dispatch }) => {
+const PostsBlock = (props) => {
 
-    const posts = postsData.map(item => {
+    const posts = props.postsData.map(item => {
        return  <Post key={item.id} postText={ item.text } avatar={ item.avatar } post={ item.post } likesCount={ item.likesCount }/>
     });
 
     let newPost = React.createRef();
 
-    const addNewPost = () => {
-        dispatch(addPostActionCreator());
+    const onAddNewPost = () => {
+        props.addNewPost();
     }
 
     const onAddNewPostChange = () => {
         let text = newPost.current.value;
-        dispatch(updateNewPostTextActionCreator(text));
+        props.updateNewPostText(text);
     }
 
     return (
@@ -26,8 +25,8 @@ const PostsBlock = ({ postsData, newPostText, dispatch }) => {
             <h3 className={ styles.postsBlock__header }>My posts</h3>
             <div className={ styles.postsBlock__textareaWrapper }>
                 <textarea ref={ newPost } className={ styles.postsBlock__textarea }
-                          onChange={ onAddNewPostChange } placeholder="Your News..." value={ newPostText } />
-                <button className={ styles.postsBlock__button } onClick={ addNewPost }>New Post</button>
+                          onChange={ onAddNewPostChange } placeholder="Your News..." value={ props.newPostText } />
+                <button className={ styles.postsBlock__button } onClick={ onAddNewPost }>New Post</button>
             </div>
 
             <div className="postsBlock__postsContainer">

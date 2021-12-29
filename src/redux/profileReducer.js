@@ -4,16 +4,17 @@ import post from "../images/content/post.png";
 
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
-    personalInfo: {
+    /*personalInfo: {
         background: profileBackground,
         avatar: avatar,
         name: "Milana Walmark",
         city: "Okamora",
         date_of_birth: "25.06.2003",
         mail: "milana.wal@gmail.com"
-    },
+    },*/
     postsData: [
         {id: 1, avatar: avatar, text: "Have you seen this beauty?", post: post, likesCount: 10},
         {id: 2, avatar: avatar, text: "Wow", likesCount: 5},
@@ -21,13 +22,14 @@ let initialState = {
         {id: 4, avatar: avatar, text: "Yo", likesCount: 9},
         {id: 5, avatar: avatar, text: "Good night", likesCount: 6}
     ],
-    newPostText: ''
+    newPostText: '',
+    profile: null
 };
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 5,
                 avatar: avatar,
@@ -35,13 +37,26 @@ const profileReducer = (state = initialState, action) => {
                 likesCount: 0
             }
 
-            state.postsData.push(newPost);
-            state.newPostText = '';
-            return state;
+            return {
+                ...state,
+                postsData: [...state.postsData, newPost],
+                newPostText: '',
+            };
+        }
 
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+        case UPDATE_NEW_POST_TEXT: {
+            return {
+                ...state,
+                newPostText: action.newText
+            };
+        }
+
+        case SET_USER_PROFILE: {
+            return {
+                ...state,
+                profile: action.profile
+            }
+        }
 
         default:
             return state;
@@ -49,6 +64,7 @@ const profileReducer = (state = initialState, action) => {
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const updateNewPostTextActionCreator = text => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
 
 export default profileReducer;
