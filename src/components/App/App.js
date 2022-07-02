@@ -3,7 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import styles from './App.module.css';
 
-import Header from '../Header/Header';
+import HeaderContainer from '../Header/HeaderContainer';
 import Sidebar from '../Sidebar/Sidebar';
 import News from '../News/News';
 import Music from '../Music/Music';
@@ -16,7 +16,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <div className={styles.appWrapper}>
-                <Header />
+                <HeaderContainer />
                 <Sidebar />
                 <main className={styles.main}>
                     <Route path='/profile/:userId?' render={ () => <ProfileContainer />}/>

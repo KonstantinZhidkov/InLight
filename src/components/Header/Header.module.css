@@ -16,6 +16,20 @@
     justify-content: space-between;
 }
 
+.header__loginBlock {}
+
+.header__loginBlock div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff8a01;
+    font-size: 1.6em;
+}
+
+.header__loginBlock div img {
+    margin-left: 10px;
+}
+
 .header__logo,
 .header__buttonImg {
     max-width: 100%;
