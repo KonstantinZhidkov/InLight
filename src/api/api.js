@@ -15,5 +15,23 @@ export const usersAPI = {
             .then(response => {
                 return response.data;
             })
+    },
+
+    getProfile(userId) {
+        return axiosInstance.get(`profile/${userId}`);
+    },
+
+    follow(userId) {
+        return axiosInstance.post(`follow/${userId}`)
+    },
+
+    unfollow(userId) {
+        return axiosInstance.delete(`follow/${userId}`)
+    }
+}
+
+export const authAPI = {
+    authMe() {
+        return axiosInstance.get(`auth/me`)
     }
 }
