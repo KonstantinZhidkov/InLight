@@ -10,6 +10,7 @@ import Music from '../Music/Music';
 import Settings from '../Settings/Settings';
 import DialogsContainer from "../Dialogs/DialogsContainer";
 import UsersContainer from '../Users/UsersContainer';
+import Login from '../Login/Login';
 import ProfileContainer from "../Profile/ProfileContainer";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path='/music' render={ () => <Music />}/>
                     <Route path='/dialogs' render={ () => <DialogsContainer />}/>
                     <Route path='/users' render={ () => <UsersContainer />}/>
+                    <Route path='/login' render={ () => <Login />}/>
                     <Route path='/settings' render={ () => <Settings />}/>
                 </main>
             </div>

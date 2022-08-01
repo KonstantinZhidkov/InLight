@@ -9,8 +9,20 @@ export default class SidebarItem extends React.Component {
 
         return (
             <div className={styles.sidebarItem} >
-                <NavLink className={styles.sidebarItem__link} activeClassName={styles.active} to={href}>{title}</NavLink>
-                <NavLink to={href}><img className={styles.sidebarItem__image} src={source} alt='icon' /></NavLink>
+                <NavLink
+                    className={styles.sidebarItem__link}
+                    activeClassName={styles.active}
+                    to={href}
+                >
+                    {title}
+                </NavLink>
+                <NavLink to={href}>
+                    <img
+                        className={styles.sidebarItem__image}
+                        src={source}
+                        alt='icon'
+                    />
+                </NavLink>
             </div>
         )
     }
