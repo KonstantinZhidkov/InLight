@@ -9,6 +9,8 @@ import {
     unfollow,
     getUsers
 } from "../../redux/usersReducer";
+import withAuthRedirect from "../../hoc/withAuthRedirect";
+import Dialogs from "../Dialogs/Dialogs";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -48,4 +50,6 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {follow, unfollow, getUsers})(UsersContainer);
+const AuthRedirectComponent = withAuthRedirect(UsersContainer);
+
+export default connect(mapStateToProps, {follow, unfollow, getUsers})(AuthRedirectComponent);
