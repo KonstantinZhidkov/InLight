@@ -1,5 +1,4 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
 import styles from './Dialogs.module.css';
 
 import Dialog from "./Dialog/Dialog";
@@ -7,7 +6,6 @@ import Message from "./Message/Message";
 
 const Dialogs = ({
     dialogsPage,
-    isAuth,
     sendMessage,
     updateNewMessageText
 }) => {
@@ -25,8 +23,6 @@ const Dialogs = ({
         const text = event.target.value;
         updateNewMessageText(text);
     }
-
-    if(!isAuth) return <Redirect to='/login' />
 
     return (
         <section className={styles.dialogs}>
