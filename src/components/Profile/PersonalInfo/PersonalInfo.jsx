@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './PersonalInfo.module.css';
 
 import Preloader from "../../Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import profileBackground from "../../../images/content/profile_background.png";
 
 const PersonalInfo = props => {
@@ -25,6 +26,9 @@ const PersonalInfo = props => {
                         <li className={styles.personalInfo__listItem}>About Me: {props.profile.aboutMe}</li>
                         <li className={styles.personalInfo__listItem}>Twitter: {props.profile.contacts.twitter}</li>
                         <li className={styles.personalInfo__listItem}>Looking for a job: {props.profile.lookingForAJob ? 'Yes' : 'No'}</li>
+                        <li className={styles.personalInfo__listItem}>
+                            <ProfileStatus status={'I\'m using InLight'} />
+                        </li>
                     </ul>
                 </div>
             </div>
