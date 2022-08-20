@@ -27,7 +27,7 @@ const PersonalInfo = props => {
                         <li className={styles.personalInfo__listItem}>Twitter: {props.profile.contacts.twitter}</li>
                         <li className={styles.personalInfo__listItem}>Looking for a job: {props.profile.lookingForAJob ? 'Yes' : 'No'}</li>
                         <li className={styles.personalInfo__listItem}>
-                            <ProfileStatus status={'I\'m using InLight'} />
+                            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                         </li>
                     </ul>
                 </div>

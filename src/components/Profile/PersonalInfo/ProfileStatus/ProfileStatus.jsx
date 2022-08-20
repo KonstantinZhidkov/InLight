@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './ProfileStatus.module.css';
 
 import { edit } from '../../../../images/images';
 
 
-const ProfileStatus = ({ status }) => {
+const ProfileStatus = ({ status, updateStatus }) => {
     const [editMode, setEditMode] = useState(false);
+    const [localStatus, setStatus] = useState(null);
+
+    useEffect(() => {
+        setStatus(status);
+    }, [status]);
 
     const toggleEditMode = () => setEditMode(!editMode);
+
+    const onStatusChange = e => setStatus(e.currentTarget.value)
 
     return(
         <div>
@@ -18,12 +25,16 @@ const ProfileStatus = ({ status }) => {
                         autoFocus
                         className={styles.edit__input}
                         id="status"
-                        onBlur={toggleEditMode}
+                        onBlur={() => {
+                            updateStatus(localStatus)
+                            toggleEditMode()
+                        }}
+                        onChange={onStatusChange}
                         type="text"
-                        value={status}
+                        value={localStatus}
                     />
                   </label>
-                : <span onDoubleClick={toggleEditMode}>
+                : <span onClick={toggleEditMode}>
                     {`Status: ${status}`}
                   </span>}
             <img alt="edit"

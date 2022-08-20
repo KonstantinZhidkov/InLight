@@ -17,16 +17,28 @@ export const usersAPI = {
             })
     },
 
-    getProfile(userId) {
-        return axiosInstance.get(`profile/${userId}`);
-    },
-
     follow(userId) {
         return axiosInstance.post(`follow/${userId}`)
     },
 
     unfollow(userId) {
         return axiosInstance.delete(`follow/${userId}`)
+    }
+}
+
+export const profileAPI = {
+    getProfile(userId) {
+        return axiosInstance.get(`profile/${userId}`);
+    },
+
+    getStatus(userId) {
+        return axiosInstance.get(`profile/status/${userId}`);
+    },
+
+    updateStatus(status) {
+        return axiosInstance.put(`profile/status`, {
+            status: status
+        });
     }
 }
 
