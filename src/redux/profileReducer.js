@@ -2,7 +2,6 @@ import avatar from "../images/content/avatar.png";
 import post from "../images/content/post.png";
 import { profileAPI } from "../api/api";
 
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
@@ -15,33 +14,16 @@ let initialState = {
         {id: 4, avatar: avatar, text: "Yo", likesCount: 9},
         {id: 5, avatar: avatar, text: "Good night", likesCount: 6}
     ],
-    newPostText: '',
     profile: null,
     status: ''
 };
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-
         case ADD_POST: {
-            let newPost = {
-                id: 5,
-                avatar: avatar,
-                text: state.newPostText,
-                likesCount: 0
-            }
-
             return {
                 ...state,
-                postsData: [...state.postsData, newPost],
-                newPostText: '',
-            };
-        }
-
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
+                postsData: [...state.postsData, { id: 5, avatar: avatar, text: action.text, likesCount: 0 }],
             };
         }
 
@@ -64,10 +46,9 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = text => ({type: UPDATE_NEW_POST_TEXT, newText: text});
-export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
-export const setStatus = status => ({type: SET_STATUS, status});
+export const addPostActionCreator = text => ({ type: ADD_POST, text });
+export const setUserProfile = profile => ({ type: SET_USER_PROFILE, profile });
+export const setStatus = status => ({ type: SET_STATUS, status });
 
 export const getUserProfile = userId => dispatch => {
     profileAPI.getProfile(userId)
